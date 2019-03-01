@@ -1,0 +1,29 @@
+<phpunit
+        bootstrap="./tests/bootstrap.php"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnError="false"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        syntaxCheck="false">
+    <php>
+        <!-- E_ALL => 32767 -->
+        <!-- E_ALL & ~E_USER_DEPRECATED => 16383 -->
+        <ini name="error_reporting" value="16383"/>
+    </php>
+    <testsuites>
+        <testsuite name="ssr">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>

@@ -1,0 +1,32 @@
+{
+  "name": "iandenh/cakephp-ssr",
+  "description": "Server side rendering in CakePHP",
+  "type": "cakephp-plugin",
+  "require": {
+    "php": "^7.0",
+    "spatie/server-side-rendering": "^0.2.5",
+    "cakephp/cakephp": "^3.7"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ian den Hartog",
+      "email": "iandenhartog@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Iandenh\\Ssr\\": "src"
+    }
+  },
+
+  "autoload-dev": {
+    "psr-4": {
+      "Iandenh\\Srr\\Test\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "php phpunit.phar",
+    "test-setup": "[ ! -f phpunit.phar ] && wget https://phar.phpunit.de/phpunit-6.5.13.phar && mv phpunit-6.5.13.phar phpunit.phar || true"
+  }
+}
